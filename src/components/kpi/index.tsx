@@ -12,7 +12,7 @@ const KpiContent: React.FC<Props> = ({ data }) => {
     <>
       <KpiCharts data={data.visuals_available} />
       <h1 className="text-2xl font-semibold my-4 self-start">Business Questions</h1>
-      <div className="flex flex-wrap gap-5 items-center justify-center mb-5">
+      <div className="flex items-center justify-between mb-5 w-full">
         {data.business_questions.map((question, idx) => (
           <QuestionCard
             key={`${data.id}-question-${idx}`}
