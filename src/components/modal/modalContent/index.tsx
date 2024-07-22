@@ -27,13 +27,13 @@ const ModalContent: React.FC<Props> = ({ asset: assetProps }) => {
       try {
         const data: Asset = await get(`api/asset/${assetProps.id}`);
         setAsset(data);
-        
+
         // This is to simulate the late response from the API
-        await new Promise(resolve => setTimeout(resolve, 500));
+        await new Promise((resolve) => setTimeout(resolve, 500));
       } catch (error) {
         console.error("Failed to fetch asset data:", error);
       } finally {
-        setLoadingData(false)
+        setLoadingData(false);
       }
     };
 
@@ -92,7 +92,7 @@ const ModalContent: React.FC<Props> = ({ asset: assetProps }) => {
         );
 
       default:
-        return (<div>No Data Available</div>);
+        return <div>No Data Available</div>;
     }
   };
 
